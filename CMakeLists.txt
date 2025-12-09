@@ -29,9 +29,11 @@ endif()
 
 # Prevent a "command line is too long" failure in Windows.
 set(CMAKE_NINJA_FORCE_RESPONSE_FILE "ON" CACHE BOOL "Force Ninja to use response files.")
-add_executable(vtk_challenge MACOSX_BUNDLE main.cxx SeismicViewer.cxx utils.cxx )
+add_executable(vtk_challenge MACOSX_BUNDLE main.cxx src/SeismicViewer.cxx src/utils.cxx )
   target_link_libraries(vtk_challenge PRIVATE ${VTK_LIBRARIES}
 )
+target_include_directories(vtk_challenge PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
+
 # vtk_module_autoinit is needed
 vtk_module_autoinit(
   TARGETS vtk_challenge
