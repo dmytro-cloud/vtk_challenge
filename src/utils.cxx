@@ -5,10 +5,10 @@ namespace utils {
     {
         auto reader = vtkSmartPointer<vtkDelimitedTextReader>::New();
         reader->SetFileName(filename.c_str());
-        // Had to change csv header
-        reader->SetFieldDelimiterCharacters(",");   // IMPORTANT for your format
-        reader->SetHaveHeaders(true);                // First row contains column names
-        reader->SetDetectNumericColumns(true);       // Auto-convert to numeric arrays
+        // Had to change csv header because first line with names had an extra space after each name
+        reader->SetFieldDelimiterCharacters(",");
+        reader->SetHaveHeaders(true);
+        reader->SetDetectNumericColumns(true);
         reader->Update();
     
         vtkTable* table = reader->GetOutput();

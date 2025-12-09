@@ -5,9 +5,7 @@
 #include <vtkSmartPointer.h>
 
 #include <iostream>
-#include <cstdlib> // For EXIT_FAILURE, EXIT_SUCCESS
-
-// --- Assumed External Functions (Implement these in a separate Utility file) ---
+#include <cstdlib>
 
 int main(int argc, char** argv) {
     if (argc < 2) {

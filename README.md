@@ -41,7 +41,11 @@ However, I would expect the code to be compilable with Visual Studio as well.
 
 ## Running the Application
 
-The application requires a CSV file containing seismic event data (`Northing`, `Easting`, `Depth`, `Magnitude`).
+The application requires a CSV file containing seismic event data (`Northing`,`Easting`,`Depth`,`Magnitude`).
+
+**Note:** The names in the header of CSV had an extra space after comma and could not be parsed easily. Example: Northing, Easting, Depth, Magnitude.
+Therefore, I decided to manually remove these spaces and edited the .csv, so the column names are formatted like this: Northing,Easting,Depth,Magnitude.
+See a .csv file under /data.
 
 **Command Syntax:**
 ```bash
